@@ -25,6 +25,12 @@ RegisterNUICallback('restoreVehicle', function(data, cb)
     cb(lib.callback.await('mri_Qvehicles:server:restoreVehicle', false, data.model) or { success = false })
 end)
 
+-- Um veiculo ou o estoque mudou: avisa a pagina NUI deste resource, que repassa pro
+-- painel aberto no mri_Qadmin (web/src/App.tsx).
+RegisterNetEvent('mri_Qvehicles:client:changed', function()
+    SendNUIMessage({ action = 'changed' })
+end)
+
 RegisterNUICallback('checkModel', function(data, cb)
     cb({ inGame = type(data.model) == 'string' and IsModelInCdimage(joaat(data.model)) or false })
 end)

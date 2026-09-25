@@ -23,6 +23,29 @@ local rows = {}
 
 local loaded = false
 
+---Admins que abriram o painel: recebem aviso quando um veiculo ou o estoque muda.
+---@type table<integer, true>
+local watchers = {}
+
+AddEventHandler('playerDropped', function()
+    watchers[source] = nil
+end)
+
+-- Junta os avisos: no maximo um a cada 2s, pra uma onda de compras nao recarregar o painel sem parar.
+local lastNotify, notifyPending = 0, false
+
+local function notifyWatchers()
+    if notifyPending or not next(watchers) then return end
+    notifyPending = true
+    SetTimeout(math.max(0, 2000 - (GetGameTimer() - lastNotify)), function()
+        notifyPending = false
+        lastNotify = GetGameTimer()
+        for src in pairs(watchers) do
+            TriggerClientEvent('mri_Qvehicles:client:changed', src)
+        end
+    end)
+end
+
 ---@param source integer
 ---@return boolean
 local function isAdmin(source)
@@ -78,12 +101,14 @@ local function saveRow(model)
     MySQL.query.await(('INSERT INTO vehicles_data (%s) VALUES (%s) ON DUPLICATE KEY UPDATE %s'):format(
         table.concat(columns, ', '), table.concat(values, ', '), table.concat(updates, ', ')
     ), params)
+    notifyWatchers()
 end
 
 ---@param model string
 local function deleteRow(model)
     rows[model] = nil
     MySQL.query.await('DELETE FROM vehicles_data WHERE model = ?', { model })
+    notifyWatchers()
 end
 
 ---Aplica a linha no qbx_core.
@@ -254,6 +279,7 @@ local function takeStock(model)
     if affected > 0 then
         local row = rows[model]
         if row then row.stock -= 1 end
+        notifyWatchers()
         return true
     end
     return false
@@ -314,6 +340,7 @@ lib.callback.register('mri_Qvehicles:server:getVehicles', function(source)
         end
     end
 
+    watchers[source] = true
     return { success = true, vehicles = list }
 end)
 
