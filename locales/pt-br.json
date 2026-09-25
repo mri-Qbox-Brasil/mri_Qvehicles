@@ -1,0 +1,70 @@
+{
+  "ui": {
+    "title": "Veículos",
+    "description": "Cadastre, edite e controle o estoque dos veículos sem reiniciar o servidor.",
+    "count_label": "veículos",
+    "new_vehicle": "Novo veículo",
+    "edit_vehicle": "Editar {model}",
+    "search_placeholder": "Buscar por modelo, nome, marca ou categoria",
+    "model": "Modelo",
+    "model_placeholder": "nome de spawn, ex.: sultanrs",
+    "model_taken": "Esse modelo já está cadastrado",
+    "model_not_in_game": "Modelo não encontrado no jogo. Confira o nome e se o pack do carro está rodando.",
+    "name": "Nome",
+    "brand": "Marca",
+    "price": "Preço",
+    "stock": "Estoque",
+    "category": "Categoria",
+    "category_placeholder": "Escolha ou digite",
+    "type": "Tipo",
+    "status": "Origem",
+    "actions": "Ações",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "restore": "Voltar ao original",
+    "remove": "Remover",
+    "remove_title": "Remover veículo",
+    "remove_added_warning": "{model} será apagado do cadastro.",
+    "remove_base_warning": "{model} é um veículo do jogo. Ele sai da lista e pode ser trazido de volta pelo filtro Removidos.",
+    "empty_state": "Nenhum veículo encontrado.",
+    "showing": "{total} veículos",
+    "showing_limited": "Mostrando {shown} de {total}. Refine a busca para ver o resto."
+  },
+  "filters": {
+    "all": "Todos",
+    "changed": "Alterados",
+    "added": "Adicionados",
+    "edited": "Editados",
+    "removed": "Removidos"
+  },
+  "status": {
+    "base": "Jogo",
+    "edited": "Editado",
+    "added": "Adicionado",
+    "removed": "Removido"
+  },
+  "types": {
+    "automobile": "Carro",
+    "bike": "Moto",
+    "boat": "Barco",
+    "heli": "Helicóptero",
+    "plane": "Avião",
+    "submarine": "Submarino",
+    "trailer": "Reboque",
+    "train": "Trem"
+  },
+  "errors": {
+    "no_permission": "Sem permissão.",
+    "invalid_data": "Dados inválidos.",
+    "invalid_model": "Modelo inválido.",
+    "model_not_lower_case": "O modelo precisa estar em minúsculas.",
+    "invalid_type": "Tipo inválido.",
+    "invalid_price": "Preço inválido.",
+    "missing_name_or_type": "Informe nome e tipo.",
+    "vehicle_not_exists": "Veículo não encontrado.",
+    "vehicle_removed": "Veículo removido. Volte ao original antes de editar.",
+    "not_base_vehicle": "Só veículos do jogo podem voltar ao original.",
+    "fetch_error": "Falha de comunicação com o jogo.",
+    "unknown": "Erro desconhecido."
+  }
+}

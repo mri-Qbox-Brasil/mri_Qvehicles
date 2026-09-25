@@ -1,0 +1,70 @@
+{
+  "ui": {
+    "title": "Vehicles",
+    "description": "Add, edit and stock vehicles without restarting the server.",
+    "count_label": "vehicles",
+    "new_vehicle": "New vehicle",
+    "edit_vehicle": "Edit {model}",
+    "search_placeholder": "Search by model, name, brand or category",
+    "model": "Model",
+    "model_placeholder": "spawn name, e.g. sultanrs",
+    "model_taken": "This model is already registered",
+    "model_not_in_game": "Model not found in game. Check the name and whether the vehicle pack is running.",
+    "name": "Name",
+    "brand": "Brand",
+    "price": "Price",
+    "stock": "Stock",
+    "category": "Category",
+    "category_placeholder": "Pick or type",
+    "type": "Type",
+    "status": "Source",
+    "actions": "Actions",
+    "save": "Save",
+    "cancel": "Cancel",
+    "restore": "Restore original",
+    "remove": "Remove",
+    "remove_title": "Remove vehicle",
+    "remove_added_warning": "{model} will be deleted.",
+    "remove_base_warning": "{model} is a game vehicle. It leaves the list and can be restored from the Removed filter.",
+    "empty_state": "No vehicles found.",
+    "showing": "{total} vehicles",
+    "showing_limited": "Showing {shown} of {total}. Refine the search to see the rest."
+  },
+  "filters": {
+    "all": "All",
+    "changed": "Changed",
+    "added": "Added",
+    "edited": "Edited",
+    "removed": "Removed"
+  },
+  "status": {
+    "base": "Game",
+    "edited": "Edited",
+    "added": "Added",
+    "removed": "Removed"
+  },
+  "types": {
+    "automobile": "Car",
+    "bike": "Bike",
+    "boat": "Boat",
+    "heli": "Helicopter",
+    "plane": "Plane",
+    "submarine": "Submarine",
+    "trailer": "Trailer",
+    "train": "Train"
+  },
+  "errors": {
+    "no_permission": "No permission.",
+    "invalid_data": "Invalid data.",
+    "invalid_model": "Invalid model.",
+    "model_not_lower_case": "Model must be lower case.",
+    "invalid_type": "Invalid type.",
+    "invalid_price": "Invalid price.",
+    "missing_name_or_type": "Name and type are required.",
+    "vehicle_not_exists": "Vehicle not found.",
+    "vehicle_removed": "Vehicle removed. Restore it before editing.",
+    "not_base_vehicle": "Only game vehicles can be restored.",
+    "fetch_error": "Could not reach the game.",
+    "unknown": "Unknown error."
+  }
+}
