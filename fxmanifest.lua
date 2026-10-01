@@ -4,7 +4,7 @@ game 'gta5'
 name 'mri_Qvehicles'
 description 'Cadastro e edicao de veiculos em runtime, como plugin do mri_Qadmin'
 author 'MRI'
-version '1.0.1'
+version '1.0.2'
 
 shared_scripts {
     '@ox_lib/init.lua',
